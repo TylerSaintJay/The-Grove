@@ -1,26 +1,113 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ═══════════════════════════════════════════════
+   THE GROVE RESERVE — Minimalist Wine/Coffee Design System
+   ═══════════════════════════════════════════════ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ── Color Palette ── */
+  --color-grove-bg: #FAF9F6;          /* Off-White Background */
+  --color-grove-charcoal: #1A1A1A;    /* Deep Charcoal Text */
+  --color-grove-card: #FFFFFF;        /* Pure White Surfaces */
+  --color-grove-gold: #C5A059;        /* Primary Gold */
+  --color-grove-gold-dark: #8C7335;   /* Dark Gold for Contrast */
+  --color-grove-champagne: #D4C49A;   /* Light Gold/Muted */
+  --color-grove-slate: rgba(26, 26, 26, 0.1); /* Subtle Borders */
+
+  /* ── Font Families ── */
+  --font-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-jakarta), "Inter", "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-cinzel: var(--font-cinzel-var), "Cinzel", Georgia, serif;
+
+  /* ── Keyframe Animations ── */
+  --animate-fade-in: fadeIn 1s ease-out forwards;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════ */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-grove-bg);
+  color: var(--color-grove-charcoal);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-grove-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-grove-charcoal);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-grove-gold);
+}
+
+::selection {
+  background: var(--color-grove-gold);
+  color: #fff;
+}
+
+/* ═══════════════════════════════════════════════
+   MINIMALIST LUXURY UTILITIES
+   ═══════════════════════════════════════════════ */
+
+/* Refined Dark Button */
+.btn-primary {
+  background: var(--color-grove-charcoal);
+  color: var(--color-grove-bg);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-grove-charcoal);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--color-grove-charcoal);
+}
+
+/* Outlined Button */
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--color-grove-slate);
+  color: var(--color-grove-charcoal);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-grove-charcoal);
+  background: rgba(26, 26, 26, 0.03);
+}
+
+.gold-divider {
+  height: 1px;
+  background: var(--color-grove-slate);
+  border: none;
 }
