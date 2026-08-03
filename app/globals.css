@@ -1,113 +1,108 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-/* ═══════════════════════════════════════════════
-   THE GROVE RESERVE — Minimalist Wine/Coffee Design System
-   ═══════════════════════════════════════════════ */
-
-@theme inline {
-  /* ── Color Palette ── */
-  --color-grove-bg: #FAF9F6;          /* Off-White Background */
-  --color-grove-charcoal: #1A1A1A;    /* Deep Charcoal Text */
-  --color-grove-card: #FFFFFF;        /* Pure White Surfaces */
-  --color-grove-gold: #C5A059;        /* Primary Gold */
-  --color-grove-gold-dark: #8C7335;   /* Dark Gold for Contrast */
-  --color-grove-champagne: #D4C49A;   /* Light Gold/Muted */
-  --color-grove-slate: rgba(26, 26, 26, 0.1); /* Subtle Borders */
-
-  /* ── Font Families ── */
-  --font-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
-  --font-sans: var(--font-jakarta), "Inter", "Plus Jakarta Sans", system-ui, sans-serif;
-  --font-cinzel: var(--font-cinzel-var), "Cinzel", Georgia, serif;
-
-  /* ── Keyframe Animations ── */
-  --animate-fade-in: fadeIn 1s ease-out forwards;
+@theme {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  
+  --color-forest: #0b1f16;
+  --color-surface: #122b20;
+  --color-gold: #dfba6b;
+  --color-gold-muted: #c5a059;
+  --color-offwhite: #FAF9F6;
+  --color-white: #ffffff;
+  --color-charcoal: #1A1A1A;
+  --color-muted: #a3b1a8;
 }
 
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* ═══════════════════════════════════════════════
-   BASE STYLES
-   ═══════════════════════════════════════════════ */
-
-html {
+/* Base resets & typography */
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--color-offwhite);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  background: var(--color-grove-bg);
-  color: var(--color-grove-charcoal);
-  font-family: var(--font-sans);
-  overflow-x: hidden;
+/* Custom Utilities for the Hybrid Aesthetic */
+
+.bg-forest {
+  background-color: var(--color-forest);
+  color: var(--color-offwhite);
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
+.bg-surface {
+  background-color: var(--color-surface);
+  color: var(--color-offwhite);
 }
 
-::-webkit-scrollbar-track {
-  background: var(--color-grove-bg);
+/* Minimalist Light Card */
+.card-light {
+  background-color: var(--color-white);
+  border: 1px solid rgba(26, 26, 26, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--color-grove-charcoal);
-  border-radius: 3px;
+/* Minimalist Dark Card */
+.card-dark {
+  background-color: var(--color-surface);
+  border: 1px solid rgba(223, 186, 107, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-grove-gold);
+/* Gold Gradient Text */
+.text-gold-gradient {
+  background: linear-gradient(to right, #C5A059, #dfba6b, #C5A059);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-::selection {
-  background: var(--color-grove-gold);
-  color: #fff;
-}
-
-/* ═══════════════════════════════════════════════
-   MINIMALIST LUXURY UTILITIES
-   ═══════════════════════════════════════════════ */
-
-/* Refined Dark Button */
-.btn-primary {
-  background: var(--color-grove-charcoal);
-  color: var(--color-grove-bg);
-  font-family: var(--font-sans);
-  font-weight: 500;
-  letter-spacing: 0.1em;
+/* Hybrid Buttons */
+.btn-gold {
+  background-color: var(--color-gold);
+  color: var(--color-forest);
+  font-weight: 600;
   text-transform: uppercase;
-  transition: all 0.3s ease;
-  border: 1px solid var(--color-grove-charcoal);
-}
-
-.btn-primary:hover {
-  background: transparent;
-  color: var(--color-grove-charcoal);
-}
-
-/* Outlined Button */
-.btn-secondary {
-  background: transparent;
-  border: 1px solid var(--color-grove-slate);
-  color: var(--color-grove-charcoal);
-  font-family: var(--font-sans);
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.15em;
   transition: all 0.3s ease;
 }
-
-.btn-secondary:hover {
-  border-color: var(--color-grove-charcoal);
-  background: rgba(26, 26, 26, 0.03);
+.btn-gold:hover {
+  background-color: var(--color-gold-muted);
+  box-shadow: 0 4px 20px rgba(223, 186, 107, 0.3);
 }
 
+.btn-outline-gold {
+  background-color: transparent;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: all 0.3s ease;
+}
+.btn-outline-gold:hover {
+  background-color: rgba(223, 186, 107, 0.1);
+}
+
+.btn-dark {
+  background-color: var(--color-forest);
+  color: var(--color-gold);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: 1px solid var(--color-gold);
+  transition: all 0.3s ease;
+}
+.btn-dark:hover {
+  background-color: var(--color-surface);
+}
+
+/* Elegant Dividers */
 .gold-divider {
   height: 1px;
-  background: var(--color-grove-slate);
-  border: none;
+  background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+  opacity: 0.5;
 }

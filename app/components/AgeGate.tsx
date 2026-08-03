@@ -42,49 +42,65 @@ export default function AgeGate() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 0.5 } }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#FAF9F6] p-6"
+          exit={{ opacity: 0, transition: { duration: 0.6, ease: "easeInOut" } }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-forest p-6 backdrop-blur-xl"
         >
-          {/* Minimalist Age Gate Content */}
-          <div className="flex flex-col items-center max-w-md w-full px-8 py-12 text-center bg-white shadow-[0_4px_40px_rgba(0,0,0,0.03)] border border-[rgba(26,26,26,0.05)] rounded-2xl">
+          {/* Dark Forest / Gold Luxury Modal */}
+          <div className="flex flex-col items-center max-w-md w-full px-8 py-14 text-center card-dark rounded-2xl relative overflow-hidden">
             
+            {/* Subtle glow behind logo */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-[var(--color-gold)] opacity-10 blur-3xl rounded-full" />
+
             {/* Crest / Logo */}
-            <div className="relative w-24 h-24 mb-8">
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="relative w-24 h-24 mb-6 z-10"
+            >
               <Image
                 src="/images/grove-crest.png"
                 alt="The Grove Reserve"
                 fill
                 sizes="96px"
-                className="object-contain"
+                className="object-contain drop-shadow-md"
                 priority
               />
-            </div>
+            </motion.div>
 
-            <h1 className="font-serif text-3xl md:text-4xl text-[#1A1A1A] mb-4">
-              Are you 18 or older?
-            </h1>
+            <motion.div
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="z-10 w-full flex flex-col items-center"
+            >
+              <h1 className="font-serif text-2xl md:text-3xl text-gold-gradient mb-3">
+                PRIVATE ALLOCATION ACCESS
+              </h1>
 
-            <p className="font-sans text-sm text-[#1A1A1A]/70 mb-10 max-w-[280px] font-light leading-relaxed">
-              You must be of legal age to enter this site.
-            </p>
+              <div className="gold-divider w-12 mb-6" />
 
-            {/* Actions */}
-            <div className="flex flex-col w-full gap-4 sm:flex-row sm:justify-center">
-              <button
-                onClick={handleEnter}
-                className="btn-primary py-4 px-10 rounded-sm text-xs tracking-widest font-semibold flex-1"
-              >
-                YES
-              </button>
-              
-              <button
-                onClick={handleExit}
-                className="btn-secondary py-4 px-10 rounded-sm text-xs tracking-widest flex-1"
-              >
-                NO
-              </button>
-            </div>
+              <p className="font-sans text-sm text-[var(--color-muted)] mb-10 max-w-[280px] font-light leading-relaxed">
+                Are you 18 years or older?
+              </p>
 
+              {/* Actions */}
+              <div className="flex flex-col w-full gap-4">
+                <button
+                  onClick={handleEnter}
+                  className="btn-gold py-4 px-10 rounded-sm text-xs font-semibold w-full"
+                >
+                  [ ENTER VAULT ]
+                </button>
+                
+                <button
+                  onClick={handleExit}
+                  className="btn-outline-gold py-4 px-10 rounded-sm text-xs w-full"
+                >
+                  [ EXIT ]
+                </button>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       )}

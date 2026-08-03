@@ -4,13 +4,14 @@ import { useState } from "react";
 import AgeGate from "./components/AgeGate";
 import ScarcityTicker from "./components/ScarcityTicker";
 import HeroSection from "./components/HeroSection";
-import CanisterShowcase from "./components/CanisterShowcase";
+import Catalog from "./components/Catalog";
+import FulfillmentInfo from "./components/FulfillmentInfo";
 import VaultAuthenticate from "./components/VaultAuthenticate";
-import CheckoutModal from "./components/CheckoutModal";
+import VerifyDrawer from "./components/VerifyDrawer";
 import Footer from "./components/Footer";
 
 export default function Home() {
-  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [isVerifyOpen, setIsVerifyOpen] = useState(false);
 
   return (
     <>
@@ -22,23 +23,26 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="flex-1">
-        {/* Hero Section with Countdown */}
-        <HeroSection onOpenCheckout={() => setIsCheckoutOpen(true)} />
+        {/* Hero Section */}
+        <HeroSection onOpenVerify={() => setIsVerifyOpen(true)} />
 
-        {/* Canister Bento Showcase & Product Catalog */}
-        <CanisterShowcase onOpenCheckout={() => setIsCheckoutOpen(true)} />
+        {/* Catalog & Offer Section */}
+        <Catalog />
 
-        {/* Vault Authenticate Engine */}
+        {/* Fulfillment & Delivery */}
+        <FulfillmentInfo />
+
+        {/* Vault Authentication */}
         <VaultAuthenticate />
       </main>
 
       {/* Footer */}
       <Footer />
 
-      {/* WhatsApp Checkout Modal */}
-      <CheckoutModal
-        isOpen={isCheckoutOpen}
-        onClose={() => setIsCheckoutOpen(false)}
+      {/* Serial Verification Drawer */}
+      <VerifyDrawer
+        isOpen={isVerifyOpen}
+        onClose={() => setIsVerifyOpen(false)}
       />
     </>
   );
