@@ -9,6 +9,8 @@ import FulfillmentInfo from "./components/FulfillmentInfo";
 import VaultAuthenticate from "./components/VaultAuthenticate";
 import VerifyDrawer from "./components/VerifyDrawer";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import RefOverlay from "./components/RefOverlay";
 
 export default function Home() {
   const [isVerifyOpen, setIsVerifyOpen] = useState(false);
@@ -17,6 +19,9 @@ export default function Home() {
     <>
       {/* Age Verification Gate */}
       <AgeGate />
+
+      {/* Navigation */}
+      <Navbar />
 
       {/* Live Scarcity Ticker */}
       <ScarcityTicker />
@@ -35,6 +40,9 @@ export default function Home() {
         {/* Vault Authentication */}
         <VaultAuthenticate />
       </main>
+
+      {/* QR Reference Overlay */}
+      <RefOverlay />
 
       {/* Footer */}
       <Footer />

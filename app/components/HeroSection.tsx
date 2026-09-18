@@ -13,10 +13,16 @@ export default function HeroSection({ onOpenVerify }: HeroSectionProps) {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-forest pt-12 pb-20"
     >
-      {/* Background ambient lighting */}
+      {/* Background ambient lighting & Image */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(223,186,107,0.12)_0%,transparent_70%)] blur-3xl" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0b1f16] via-transparent to-[#0b1f16]" />
+        <Image
+          src="/images/lifestyle-hero.jpg"
+          alt="The Grove Reserve Pre-Roll Lifestyle"
+          fill
+          className="object-cover object-[center_30%] opacity-[0.25]"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0b1f16]/90 via-[#0b1f16]/60 to-[#0b1f16]" />
       </div>
 
       {/* Content Container */}
