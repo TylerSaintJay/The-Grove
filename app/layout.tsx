@@ -31,42 +31,45 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "The Grove Reserve — Heritage Lot Section | Private Allocation Portal",
+  title: "The Grove Reserve — LOT 001 | Hand-Crafted Luxury Pre-Roll Tubes",
   metadataBase: new URL("https://reservegrove.shop"),
   description:
-    "Curated 3.5g Micro-Batches. Nitrogen-sealed in 75mm × 22mm aluminum canisters with 24k gold foil and hand-textured linen labels. Reserved for the few.",
+    "Limited-run hand-crafted pre-roll tubes. White Widow • AAA — nitrogen-purged, tactile brushed vinyl, gold foil serialized. LOT SECTION: 001. Reserved for the few.",
   keywords: [
     "The Grove Reserve",
+    "luxury pre-rolls",
+    "pre-roll tubes",
+    "White Widow AAA",
+    "LOT 001",
     "heritage reserve",
-    "luxury allocation",
-    "nitrogen sealed",
-    "micro batch",
-    "serialized unit",
-    "private member",
+    "private allocation",
+    "Johannesburg delivery",
+    "premium cannabis",
+    "South Africa dispensary",
   ],
   openGraph: {
-    title: "The Grove Reserve — Reserved for the Few",
+    title: "The Grove Reserve — LOT 001 Hand-Crafted Pre-Roll Tubes",
     description:
-      "Curated 3.5g Micro-Batches. Nitrogen-sealed in precision aluminum canisters with 24k gold foil.",
+      "White Widow • AAA. Nitrogen-purged, tactile brushed vinyl pop-top tubes with gold foil serial authentication. Reserved for connoisseurs.",
     url: "https://reservegrove.shop",
     siteName: "The Grove Reserve",
     type: "website",
     locale: "en_ZA",
     images: [
       {
-        url: "/images/hero-canister.jpg",
+        url: "/images/preroll-single.png",
         width: 1200,
-        height: 630,
-        alt: "The Grove Reserve Heritage Vessel",
+        height: 1200,
+        alt: "The Grove Reserve Pre-Roll Tube — LOT 001",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Grove Reserve — Reserved for the Few",
+    title: "The Grove Reserve — LOT 001",
     description:
-      "Curated 3.5g Micro-Batches. Nitrogen-sealed in precision aluminum canisters.",
-    images: ["/images/hero-canister.jpg"],
+      "White Widow • AAA. Hand-crafted pre-roll tubes. Gold foil serialized. Private allocation now open.",
+    images: ["/images/preroll-single.png"],
   },
   robots: {
     index: true,

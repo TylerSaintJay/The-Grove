@@ -56,14 +56,14 @@ export default function AgeGate() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="relative w-24 h-24 mb-6 z-10"
+              className="relative w-28 h-28 mb-6 z-10 bg-transparent"
             >
               <Image
                 src="/images/grove-crest.png"
                 alt="The Grove Reserve"
                 fill
-                sizes="96px"
-                className="object-contain drop-shadow-md"
+                sizes="112px"
+                className="object-contain drop-shadow-[0_0_16px_rgba(223,186,107,0.4)]"
                 priority
               />
             </motion.div>
