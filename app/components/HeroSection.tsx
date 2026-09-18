@@ -40,14 +40,14 @@ export default function HeroSection({ onOpenVerify }: HeroSectionProps) {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="relative w-20 h-20 sm:w-24 sm:h-24 mb-6"
+          className="relative w-20 h-20 sm:w-24 sm:h-24 mb-6 bg-transparent"
         >
           <Image
             src="/images/grove-crest.png"
             alt="The Grove Reserve"
             fill
             sizes="96px"
-            className="object-contain drop-shadow-[0_0_20px_rgba(223,186,107,0.3)]"
+            className="object-contain drop-shadow-[0_0_20px_rgba(223,186,107,0.3)] bg-transparent"
             priority
           />
         </motion.div>

@@ -63,7 +63,7 @@ export default function AgeGate() {
                 alt="The Grove Reserve"
                 fill
                 sizes="112px"
-                className="object-contain drop-shadow-[0_0_16px_rgba(223,186,107,0.4)]"
+                className="object-contain drop-shadow-[0_0_16px_rgba(223,186,107,0.4)] bg-transparent"
                 priority
               />
             </motion.div>

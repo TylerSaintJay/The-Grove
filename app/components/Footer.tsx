@@ -9,13 +9,13 @@ export default function Footer() {
       <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
         
         {/* Crest */}
-        <div className="relative w-14 h-14 mx-auto opacity-70 mb-4">
+        <div className="relative w-14 h-14 mx-auto opacity-70 mb-4 bg-transparent">
           <Image
             src="/images/grove-crest.png"
             alt="The Grove Crest"
             fill
             sizes="56px"
-            className="object-contain"
+            className="object-contain bg-transparent"
           />
         </div>
 
